@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 
 namespace CreatingOfTheCinema
@@ -9,7 +10,7 @@ namespace CreatingOfTheCinema
     /* 
     Lets create abstract class and set there fields with main attributes. Derived classes are needed as well.
     Well need to create an array of the cinemas.
-    Size and amount of the cinemas we should find out by usin 'random' function. 
+    Size and amount of the cinemas we should find out by using 'random' function. 
     Then well need to sort array from the bigger one to slover and to display info about all cinemas.
     */
     class Program
@@ -52,19 +53,19 @@ namespace CreatingOfTheCinema
 
             CinemaBuilding sOne = new CinemaBuilding()
             {
-                numOfSeats = R.Next(300, 500),
-                numOfRows = R.Next(20, 30),
-                luxVIPzone = R.Next(0, 2),
-                lengthOgScene = R.Next(20, 30),
-                widthOgScene = R.Next(30, 40)
+                numOfSeats = R.Next(250, 501),
+                numOfRows = R.Next(20, 31),
+                luxVIPzone = R.Next(0, 4),
+                lengthOgScene = R.Next(20, 31),
+                widthOgScene = R.Next(30, 41)
             };
             CinemaBuilding sTwo = new CinemaBuilding()
             {
-                numOfSeats = R.Next(300, 500),
-                numOfRows = R.Next(20, 30),
-                luxVIPzone = R.Next(0, 2),
-                lengthOgScene = R.Next(20, 30),
-                widthOgScene = R.Next(30, 40)
+                numOfSeats = R.Next(250, 501),
+                numOfRows = R.Next(20, 31),
+                luxVIPzone = R.Next(0, 4),
+                lengthOgScene = R.Next(20, 31),
+                widthOgScene = R.Next(30, 41)
             };
             CinemaBuilding sThree = new CinemaBuilding()
             {
@@ -82,8 +83,11 @@ namespace CreatingOfTheCinema
 
             // printing info regarding first cinema :)
 
-            CinemaBuilding s = CinemaBuildingList[0];
+            for (int i = 0; i < CinemaBuildingList.Count; i++)
+            { 
+            CinemaBuilding s = CinemaBuildingList[i];
             s.GetInfo();
+            }
             Console.ReadKey();
         }
     }
